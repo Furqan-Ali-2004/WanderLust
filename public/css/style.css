@@ -1,0 +1,219 @@
+body {
+  background-color: pink;
+  font-family: "Plus Jakarta Sans", serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: #fff;
+}
+
+.navbar-nav .add-listing-box {
+  padding: 0 5px 0 5px;
+}
+
+.navbar-nav .add-listing-box:hover {
+  background-color: rgba(192, 192, 192, 0.24);
+  border-radius: 30px;
+  padding: 0 5px 0 5px;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info {
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+/* Cards */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #fff;
+}
+
+/* New Page */
+.add-btn {
+  background-color: #ff385c !important;
+  border: none !important;
+}
+
+/* Edit Page */
+.edit-btn {
+  background-color: #ff385c !important;
+  border: none !important;
+}
+
+/* Show Page */
+/* show-specific styles added in style.css */
+
+.show-img {
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.edit-btn {
+  background-color: #ff385c !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.edit-btn:hover {
+  background-color: #ff385dcc !important;
+}
+
+.delete-btn {
+  background-color: #000 !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.delete-btn:hover {
+  background-color: #000000cc !important;
+}
+
+.card-body {
+  padding: 0.5rem 1rem !important;
+}
+
+.btn-container {
+  padding-left: 350px !important;
+}
+
+.del-review-btn {
+  border-radius: 25px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+@media (max-width: 768px) {
+  .show-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .show-card .card-title {
+    font-size: 1rem;
+  }
+
+  .show-img {
+    max-height: 250px;
+  }
+
+  .btn-container {
+    text-align: center;
+    padding: 0 !important;
+  }
+}
+
+/* SignUp And Login Page */
+.btn-success {
+  background-color: #ff385c !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.username-inp input {
+  border-radius: 25px !important;
+}
+
+.password-inp input {
+  border-radius: 25px !important;
+}
+
+.email-inp input {
+  border-radius: 25px !important;
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    width: 100%;
+  }
+
+  .username-inp {
+    width: 200px;
+  }
+
+  .password-inp {
+    width: 200px;
+  }
+
+  .email-inp {
+    width: 200px;
+  }
+
+  .btn-success {
+    width: 200px;
+  }
+}
