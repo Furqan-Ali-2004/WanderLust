@@ -5,7 +5,7 @@ const Listing = require("../models/listing");
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
 const multer = require("multer");
-const { storage } = require("./cloudinaryconfig.js");
+const { cloudinary, storage } = require("./cloudinaryconfig.js");
 const upload = multer({ storage });
 
 // This route will show all listings and create a new listing
