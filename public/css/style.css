@@ -198,22 +198,35 @@ body {
 
 @media (max-width: 768px) {
   .login-form {
-    width: 100%;
+    padding: 0 1rem; /* thoda spacing side se */
   }
 
-  .username-inp {
-    width: 200px;
+  .login-form h1,
+  .login-form > div {
+    width: 100% !important;
+    margin: 0 auto;
   }
 
-  .password-inp {
-    width: 200px;
-  }
-
-  .email-inp {
-    width: 200px;
-  }
-
+  .username-inp input,
+  .password-inp input,
   .btn-success {
-    width: 200px;
+    width: 100% !important;
+  }
+
+  .register-form {
+    padding: 0 1rem; /* thoda spacing side se */
+  }
+
+  .register-form h1,
+  .register-form > div {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .username-inp input,
+  .password-inp input,
+  .email-inp input,
+  .btn-success {
+    width: 100% !important;
   }
 }
