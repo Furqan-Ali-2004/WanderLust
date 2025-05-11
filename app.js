@@ -20,7 +20,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-
+const homeRouter = require("./routes/home.js");
 // Smart MongoDB URL handling
 const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/wanderlust"; // For Local DB
 
@@ -89,6 +89,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use("/", homeRouter);
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
