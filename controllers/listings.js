@@ -20,7 +20,7 @@ module.exports.index = async (req, res) => {
   });
 };
 
-module.exports.renderNewFom = (req, res) => {
+module.exports.renderNewForm = (req, res) => {
   res.render("./listings/new.ejs");
 };
 

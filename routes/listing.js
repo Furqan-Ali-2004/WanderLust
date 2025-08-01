@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync");
-const Listing = require("../models/listing");
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
 const multer = require("multer");
-const { cloudinary, storage } = require("../cloudinaryConfig.js");
+const { storage } = require("../cloudinaryConfig.js");
 const upload = multer({ storage });
 
 // This route will show all listings and create a new listing
