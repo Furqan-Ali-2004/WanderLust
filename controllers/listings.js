@@ -6,21 +6,21 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 module.exports.index = async (req, res) => {
   const { category } = req.query;
 
-  let Listings;
+  let allListings;
 
   if (category) {
-    Listings = await Listing.find({ category });
+    allListings = await Listing.find({ category });
   } else {
-    Listings = await Listing.find({});
+    allListings = await Listing.find({});
   }
 
   res.render("./listings/index.ejs", {
-    Listings,
+    allListings,
     selectedCategory: category || "",
   });
 };
 
-module.exports.renderNewForm = (req, res) => {
+module.exports.renderNewFom = (req, res) => {
   res.render("./listings/new.ejs");
 };
 
