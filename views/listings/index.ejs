@@ -110,7 +110,7 @@
     <div id="filters">
       <a
         href="/listings?category=rooms"
-        class="filter <%= ( selectedCategory === 'rooms') ? 'active' : '' %>"
+        class="filter <%= (typeof selectedCategory !== 'undefined' && selectedCategory === 'rooms') ? 'active' : '' %>"
       >
         <div><i class="fa-solid fa-bed"></i></div>
         <p>Rooms</p>
