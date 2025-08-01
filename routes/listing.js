@@ -21,9 +21,7 @@ router
   );
 
 // NEW ROUTE
-router.get("/new", isLoggedIn, listingController.renderNewFom);
-
-// Routes for showing, updating, and deleting a specific listing by ID
+router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 router
   .route("/:id")
