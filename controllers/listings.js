@@ -1,22 +1,22 @@
-const Listing = require("../models/listing"); // import the Listing model
+const Listing = require("../models/listing");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
-const mapToken = process.env.MAP_TOKEN; // get the mapbox token from the environment variables
+const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async (req, res) => {
-  const { category } = req.query; // 👈 Check if category is selected from query string
+  const { category } = req.query;
 
   let allListings;
 
   if (category) {
-    allListings = await Listing.find({ category }); // 🔍 Filter by selected category
+    allListings = await Listing.find({ category });
   } else {
-    allListings = await Listing.find({}); // 📦 Show all if no filter
+    allListings = await Listing.find({});
   }
 
   res.render("./listings/index.ejs", {
     allListings,
-    selectedCategory: category, // 👈 Helpful for frontend to highlight active filter
+    selectedCategory: category || "",
   });
 };
 
@@ -48,11 +48,11 @@ module.exports.createListing = async (req, res, next) => {
   let url = req.file.path;
   let filename = req.file.filename;
   let newListing = new Listing(req.body.listing);
-  newListing.owner = req.user._id; // add the owner to the listing
+  newListing.owner = req.user._id;
   newListing.image = { url, filename };
 
   newListing.geometry = response.body.features[0].geometry;
-  newListing.category = req.body.listing.category; // Add the category to the new listing
+  newListing.category = req.body.listing.category;
 
   let savedListiing = await newListing.save();
   console.log(savedListiing);
@@ -79,7 +79,6 @@ module.exports.updateListing = async (req, res) => {
   let { id } = req.params;
   let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
 
-  // check if the user has uploaded a new image then update the image otherwise keep the old image
   if (typeof req.file !== "undefined") {
     let url = req.file.path;
     let filename = req.file.filename;
