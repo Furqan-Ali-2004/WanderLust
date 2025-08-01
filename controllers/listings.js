@@ -4,8 +4,20 @@ const mapToken = process.env.MAP_TOKEN; // get the mapbox token from the environ
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async (req, res) => {
-  const allListings = await Listing.find({}); // find all listings
-  res.render("./listings/index.ejs", { allListings });
+  const { category } = req.query; // 👈 Check if category is selected from query string
+
+  let allListings;
+
+  if (category) {
+    allListings = await Listing.find({ category }); // 🔍 Filter by selected category
+  } else {
+    allListings = await Listing.find({}); // 📦 Show all if no filter
+  }
+
+  res.render("./listings/index.ejs", {
+    allListings,
+    selectedCategory: category, // 👈 Helpful for frontend to highlight active filter
+  });
 };
 
 module.exports.renderNewFom = (req, res) => {
@@ -40,6 +52,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.image = { url, filename };
 
   newListing.geometry = response.body.features[0].geometry;
+  newListing.category = req.body.listing.category; // Add the category to the new listing
 
   let savedListiing = await newListing.save();
   console.log(savedListiing);
