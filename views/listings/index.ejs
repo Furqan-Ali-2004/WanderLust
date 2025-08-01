@@ -105,97 +105,69 @@
     }
   </style>
 
-  <!-- 👇 Filter Section -->
-  <div class="filter-bar">
-    <div id="filters">
-      <a
-        href="/listings?category=rooms"
-        class="filter <%= ( selectedCategory === 'rooms') ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-      </a>
+ <div class="filter-bar">
+  <div id="filters">
+    <a href="/listings" class="filter <%= selectedCategory === "" ? "active" : "" %>">
+      <div><i class="fa-solid fa-list"></i></div>
+      <p>All</p>
+    </a>
 
-      <a
-        href="/listings?category=iconic-cities"
-        class="filter <%= selectedCategory === 'iconic-cities' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-      </a>
+    <a href="/listings?category=rooms" class="filter <%= selectedCategory === "rooms" ? "active" : "" %>">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </a>
 
-      <a
-        href="/listings?category=mountains"
-        class="filter <%= selectedCategory === 'mountains' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountains</p>
-      </a>
+    <a href="/listings?category=iconic-cities" class="filter <%= selectedCategory === "iconic-cities" ? "active" : "" %>">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </a>
 
-      <a
-        href="/listings?category=castles"
-        class="filter <%= selectedCategory === 'castles' ? 'active' : '' %>"
-      >
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
-      </a>
+    <a href="/listings?category=mountains" class="filter <%= selectedCategory === "mountains" ? "active" : "" %>">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+    </a>
 
-      <a
-        href="/listings?category=amazing-pools"
-        class="filter <%= selectedCategory === 'amazing-pools' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
-      </a>
+    <a href="/listings?category=castles" class="filter <%= selectedCategory === "castles" ? "active" : "" %>">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castles</p>
+    </a>
 
-      <a
-        href="/listings?category=camping"
-        class="filter <%= selectedCategory === 'camping' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-      </a>
+    <a href="/listings?category=amazing-pools" class="filter <%= selectedCategory === "amazing-pools" ? "active" : "" %>">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </a>
 
-      <a
-        href="/listings?category=farms"
-        class="filter <%= selectedCategory === 'farms' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farms</p>
-      </a>
+    <a href="/listings?category=camping" class="filter <%= selectedCategory === "camping" ? "active" : "" %>">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </a>
 
-      <a
-        href="/listings?category=arctic"
-        class="filter <%= selectedCategory === 'arctic' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-snowflake"></i></div>
-        <p>Arctic</p>
-      </a>
+    <a href="/listings?category=farms" class="filter <%= selectedCategory === "farms" ? "active" : "" %>">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </a>
 
-      <a
-        href="/listings?category=domes"
-        class="filter <%= selectedCategory === 'domes' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-igloo"></i></div>
-        <p>Domes</p>
-      </a>
+    <a href="/listings?category=arctic" class="filter <%= selectedCategory === "arctic" ? "active" : "" %>">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </a>
 
-      <a
-        href="/listings?category=beach"
-        class="filter <%= selectedCategory === 'beach' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-umbrella-beach"></i></div>
-        <p>Beach</p>
-      </a>
+    <a href="/listings?category=domes" class="filter <%= selectedCategory === "domes" ? "active" : "" %>">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+    </a>
 
-      <a
-        href="/listings?category=golfing"
-        class="filter <%= selectedCategory === 'golfing' ? 'active' : '' %>"
-      >
-        <div><i class="fa-solid fa-golf-ball-tee"></i></div>
-        <p>Golfing</p>
-      </a>
-    </div>
+    <a href="/listings?category=beach" class="filter <%= selectedCategory === "beach" ? "active" : "" %>">
+      <div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beach</p>
+    </a>
+
+    <a href="/listings?category=golfing" class="filter <%= selectedCategory === "golfing" ? "active" : "" %>">
+      <div><i class="fa-solid fa-golf-ball-tee"></i></div>
+      <p>Golfing</p>
+    </a>
+  </div>
+</div>
 
     <div class="tax-toggle">
       <div class="form-check-reverse form-switch">

@@ -16,7 +16,7 @@ module.exports.index = async (req, res) => {
 
   res.render("./listings/index.ejs", {
     allListings,
-    selectedCategory: req.query.category || "",
+    selectedCategory: category || "",
   });
 };
 
