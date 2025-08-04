@@ -1,11 +1,9 @@
 const User = require("../models/user.js");
 
-// This function is called when the user tries to sign up
 module.exports.renderSignupForm = (req, res) => {
   res.render("users/signup.ejs");
 };
 
-// This function is called when the user submits the signup form
 module.exports.signup = async (req, res) => {
   try {
     let { username, email, password } = req.body;
@@ -25,8 +23,6 @@ module.exports.signup = async (req, res) => {
   }
 };
 
-//
-// This function is called when the user tries to log in
 module.exports.renderLoginForm = (req, res) => {
   res.render("users/login.ejs");
 };
@@ -38,7 +34,6 @@ module.exports.login = async (req, res) => {
   res.redirect(redirectUrl);
 };
 
-// This function is called when the user tries to log out
 module.exports.logout = (req, res, next) => {
   req.logout((err) => {
     if (err) {
